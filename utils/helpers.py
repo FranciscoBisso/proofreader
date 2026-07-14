@@ -3,12 +3,12 @@
 import re
 from pathlib import Path
 from typing import Literal, Union
-from pydantic import BaseModel, Field
+
 
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_groq import ChatGroq
 from rich.progress import track
-
+from schemas.models import FileMetadata
 
 type LLM = Literal[
   "gpt20",
@@ -28,19 +28,6 @@ type LLM = Literal[
 # PATHS
 CWD: Path = Path(__file__).cwd()
 PDF_DIR: Path = CWD / "pdf"
-
-
-# SCHEMAS
-class FileMetadata(BaseModel):
-  """Technical metadata representing a file in the local filesystem.
-
-  Attributes:
-    name (`str`): The name of the file.
-    path (`pathlib.Path`): The absolute path to the file.
-  """
-
-  name: str = Field(description="The name of the file.")
-  path: Path = Field(description="The absolute path to the file.")
 
 
 # UTILITY FUNCTIONS
@@ -282,7 +269,3 @@ def merge_tuples(existing: tuple | None, new: tuple | None) -> tuple:
   cleaned_new = [item for item in new_tuple if item is not None]
 
   return existing + tuple(cleaned_new)
-
-
-if __name__ == "__main__":
-  print("Hello from helpers!")
