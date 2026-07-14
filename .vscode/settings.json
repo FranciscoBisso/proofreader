@@ -1,0 +1,34 @@
+{
+  "cSpell.ignoreWords": [
+    "ainvoke",
+    "aload",
+    "astream",
+    "checkpointer",
+    "dotenv",
+    "fontsize",
+    "gemini",
+    "genai",
+    "groq",
+    "langchain",
+    "langgraph",
+    "onnxruntime",
+    "pydantic",
+    "pymu",
+    "pymupdf",
+    "qwen",
+    "rapidocr",
+    "respuesta",
+    "rinput",
+    "rprint",
+    "streamlit",
+    "uuid"
+  ],
+  "cSpell.words": [
+    "serde"
+  ],
+  "pylint.args": [
+    "--indent-string=  ",
+    "--disable=broad-exception-caught",
+    "--disable=line-too-long"
+  ],
+}
